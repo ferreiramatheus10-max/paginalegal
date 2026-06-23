@@ -1,1 +1,105 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body{
+font-family: "Poppins", sans-serif;
+}
+header{
+background-image: linear-gradient(#891717,#ff0101 );
+color: white;
+width: 100%;
+padding: 20px;
+font-size: xx-large;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.cabecalho-itens{
+max-width: 1980px;
+margin: 0 auto;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.cabecalho_imagem{
+width: 10%;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+}
+.titulo_site{
+padding: 50px;
+text-align: center;
+width: 50%;
+font: 30px;
+}
+.sociais{
+display: flex;
+justify-content: flex-end;
+width: 25%;
+padding-right: 30px;
+}
+.banner1{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+}
 
+banner1 img{
+    width: 100%;
+    max-width: 100%;
+    display: block;
+}
+
+.estudante_titulo{
+padding: 50px;
+text-align: center;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.estudante-nome{
+text-align: center;
+}
+.estudante-imagem{
+width: 200px;
+}
+.estudante-icone{
+width: 38px;
+padding: 4px 8px;
+}
+.estudante{
+background-image: background-color(#faae43);
+padding: 24px 0;
+}
+
+.estudante.div{
+text-align: center;
+padding: 24px 0;
+}
+.estudantes_todos{
+display: flex;
+justify-content: space-around;
+}
+.escola{
+background-image: linear-gradient(#ff0101,#891717);
+color: white;
+display: flex;
+justify-content:center;
+padding: 24px 0;
+text-align:center;
+display:block;
+}
+.escola-titulo{
+padding: 50px;
+text-align: center;
+}
+.logo_rodape{
+height: 180px;
+padding: 12px 0;
+
+}
+
+.link{
+color: #ffffff;
+text-decoration: none;
+}
