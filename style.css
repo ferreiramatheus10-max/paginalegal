@@ -103,3 +103,27 @@ padding: 12px 0;
 color: #ffffff;
 text-decoration: none;
 }
+
+.titulo-video {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.container-video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.centralizacao {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #ffffff;
+}
