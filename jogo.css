@@ -1,0 +1,397 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body{
+font-family: "Poppins", sans-serif;
+}
+header{
+background-image: linear-gradient(#891717,#ff0101 );
+color: white;
+width: 100%;
+padding: 20px;
+font-size: xx-large;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.cabecalho-itens{
+max-width: 1980px;
+margin: 0 auto;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.cabecalho_imagem{
+width: 10%;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+}
+.titulo_site{
+padding: 50px;
+text-align: center;
+width: 50%;
+font: 30px;
+}
+.sociais{
+display: flex;
+justify-content: flex-end;
+width: 25%;
+padding-right: 30px;
+}
+.banner1{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+banner1 img{
+    width: 100%;
+    max-width: 100%;
+    display: block;
+}
+
+.estudante_titulo{
+padding: 50px;
+text-align: center;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.estudante-nome{
+text-align: center;
+}
+.estudante-imagem{
+width: 200px;
+}
+.estudante-icone{
+width: 38px;
+padding: 4px 8px;
+}
+.estudante{
+background-image: background-color(#faae43);
+padding: 24px 0;
+}
+
+.estudante.div{
+text-align: center;
+padding: 24px 0;
+}
+.estudantes_todos{
+display: flex;
+justify-content: space-around;
+}
+
+.titulo-video {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20%;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    margin-bottom: 15px;
+
+}
+
+
+.escola{
+background-image: linear-gradient(#ff0101,#891717);
+color: white;
+display: flex;
+justify-content:center;
+padding: 24px 0;
+text-align:center;
+display:block;
+}
+.escola-titulo{
+padding: 50px;
+text-align: center;
+}
+.logo_rodape{
+height: 180px;
+padding: 12px 0;
+
+}
+
+.link{
+color: #ffffff;
+text-decoration: none;
+}
+
+.titulo-video {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.container-video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.centralizacao {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333333;
+  display: flex;
+}
+
+ul li a {
+  display: block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #791616;;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333333;
+  display: flex;
+  justify-content: center;
+}
+
+ul li a.active {
+  background-color: #04AA6D;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  border: 1px solid #911111;
+  background-color: #8e1616;
+font-size: 20px;
+}
+
+.area-jogo {
+  min-height: calc(100vh - 74px);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+/* O quadrado: nunca passa de 640px e sempre cabe na tela */
+#jogo {
+  --panel: #ffffff;
+  --bg: #f3f8f7;
+  --ink: #12332b;
+  --mute: #4f6b64;
+  --lane: #e1eeea;
+  --line: #b9d3cc;
+  --accent: #14745a;
+  --tile: #12332b;
+  --key: #ffffff;
+  --keyshadow: #a9c4bc;
+
+  position: relative;
+  width: min(640px, calc(100vw - 200px - 40px), calc(100vh - 74px - 40px));
+  aspect-ratio: 1 / 1;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', Helvetica, sans-serif;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#jogo #app {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#jogo #hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 12px 18px 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+#jogo #score {
+  font-family: 'Poppins', Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+#jogo #combo {
+  font-size: 14px;
+  color: var(--mute);
+  text-align: right;
+}
+
+#jogo #combo b {
+  color: var(--accent);
+  font-size: 20px;
+  font-family: 'Poppins', Helvetica, sans-serif;
+}
+
+#jogo #hp {
+  height: 6px;
+  background: var(--line);
+  margin: 0 18px 8px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+#jogo #hpf {
+  height: 100%;
+  width: 100%;
+  background: var(--accent);
+  transition: width 0.15s;
+}
+
+#jogo #wrap {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+
+#jogo canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: none;
+}
+
+/* Telas por cima do jogo (menu, pausa, fim) */
+#jogo .ov {
+  position: absolute;
+  inset: 0;
+  background: rgba(243, 248, 247, 0.96);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  text-align: center;
+  z-index: 5;
+  overflow-y: auto;
+}
+
+#jogo .ov.hide {
+  display: none;
+}
+
+#jogo h1 {
+  font-family: 'Poppins', Helvetica, sans-serif;
+  font-size: 38px;
+  line-height: 1.1;
+  color: var(--ink);
+  text-align: center;
+  width: auto;
+  font-weight: 700;
+}
+
+#jogo h2 {
+  font-family: 'Poppins', Helvetica, sans-serif;
+  font-size: 28px;
+  color: var(--ink);
+}
+
+#jogo p {
+  background: none;
+  margin: 0;
+  color: var(--mute);
+  font-size: 14px;
+  line-height: 1.45;
+  max-width: 44ch;
+  text-align: center;
+}
+
+#jogo p.dica {
+  font-size: 12px;
+  max-width: none;
+}
+
+#jogo .row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#jogo button {
+  font-family: 'Inter', Helvetica, sans-serif;
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--panel);
+  border: 1.5px solid var(--line);
+  padding: 7px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  min-height: 38px;
+}
+
+#jogo button:hover {
+  border-color: var(--accent);
+}
+
+#jogo button.on {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+  font-weight: 600;
+}
+
+#jogo button.go {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+  font-weight: 600;
+  padding: 9px 34px;
+  font-size: 17px;
+  min-height: 44px;
+}
+
+#jogo button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+#jogo .lbl {
+  font-size: 13px;
+  color: var(--mute);
+}
+
+#jogo .stats {
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+#jogo #pauseb {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 3;
+  min-height: 30px;
+  padding: 2px 10px;
+  font-size: 13px;
+  opacity: 0.85;
+}
