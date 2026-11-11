@@ -50,8 +50,7 @@
     { name: "Brilha, Brilha", notes: [0,0,7,7,9,9,7,5,5,4,4,2,2,0,7,7,5,5,4,4,2,7,7,5,5,4,4,2,0,0,7,7,9,9,7,5,5,4,4,2,2,0] },
     { name: "Para Elisa", notes: [16,15,16,15,16,11,14,12,9,0,4,9,11,4,8,11,12,4,16,15,16,15,16,11,14,12,9,0,4,9,11,4,12,11,9] },
     { name: "Vamo Inter!",notes: [0, 4, 7, 12, 7, 4, 0, 4,7, 9, 12, 9, 7, 4, 7, 12,14, 12, 9, 7, 4, 7, 9, 12,7, 4, 0, 4, 7, 12, 16, 14,12, 9, 7, 4, 7, 9, 12, 14,16, 14, 12, 9, 7, 4, 0, 4,7, 12, 14, 16, 14, 12, 7, 4,0, 7, 12, 16, 12, 7, 4, 0] },
-    { name: "Erika", notes: [0, 2, 4, 5, 7, 5, 4, 2,0, 2, 4, 7, 9, 7, 5, 4,2, 4, 5, 7, 9, 7, 5, 4,2, 0, 2, 4, 5, 4, 2, 0,7, 7, 9, 12, 11, 9, 7, 5,4, 5, 7, 9, 7, 5, 4, 2,0, 2, 4, 5, 7, 9, 7, 5,4, 2, 0, 2, 4, 2, 0, -2] }
-
+    { name: "Erika – Piano", events: [[4, 1], [8, 0.5], [8, 0.5], [8, 1],[8, 1], [11, 1], [11, 1], [14, 1],[14, 1.5], [13, 0.5], [11, 1],[9, 1], [11, 1], [13, 1],[14, 1], [13, 0.5], [11, 1]] }
   ];
   var DIFFS = [{ n: "Fácil", gap: 0.62 }, { n: "Médio", gap: 0.46 }, { n: "Difícil", gap: 0.34 }];
   var KEYS = { d: 0, f: 1, j: 2, k: 3 };
@@ -119,17 +118,56 @@
   function keyTop() { return H - Math.min(H * 0.2, 120); }
 
   // ---------- jogo ----------
-  function build() {
-    var s = SONGS[songI], gap = DIFFS[diffI].gap, last = -1, seed = songI * 7 + diffI * 3 + 1;
-    tiles = [];
-    s.notes.forEach(function (semi, i) {
+function build() {
+  var s = SONGS[songI];
+  var gap = DIFFS[diffI].gap;
+  var last = -1;
+  var seed = songI * 7 + diffI * 3 + 1;
+  tiles = [];
+
+  if (s.events) {
+    var cursor = 0;
+
+    s.events.forEach(function (ev) {
       seed = (seed * 1103515245 + 12345) & 0x7fffffff;
+
       var lane = seed % 4;
-      if (lane === last) lane = (lane + 1 + (seed >> 4) % 3) % 4;
+      if (lane === last) lane = (lane + 1) % 4;
       last = lane;
-      tiles.push({ lane: lane, semi: semi, t: LEAD + 1 + i * gap, done: false, state: 0 });
+
+      tiles.push({
+        lane: lane,
+        semi: ev[0],
+        t: LEAD + 1 + cursor,
+        done: false,
+        state: 0
+      });
+
+      cursor += ev[1] * 0.5 * (gap / 0.46);
     });
+
+    return;
   }
+
+  s.notes.forEach(function (semi, i) {
+    seed = (seed * 1103515245 + 12345) & 0x7fffffff;
+    var lane = seed % 4;
+
+    if (lane === last) {
+      lane = (lane + 1 + (seed >> 4) % 3) % 4;
+    }
+
+    last = lane;
+
+    tiles.push({
+      lane: lane,
+      semi: semi,
+      t: LEAD + 1 + i * gap,
+      done: false,
+      state: 0
+    });
+  });
+}
   function begin() {
     audio(); build();
     score = 0; combo = 0; maxCombo = 0; hp = 100; hits = 0; perfects = 0; misses = 0; floats = [];
